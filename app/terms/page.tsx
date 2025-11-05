@@ -43,7 +43,7 @@ export default function TermsPage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">১. শর্তাবলীর স্বীকৃতি</h2>
                   <p className="text-muted-foreground mb-4">
-                    AI Tax & Law Assistant ("সেবা", "আমরা", "আমাদের") ব্যবহার করে, আপনি এই সেবার শর্তাবলী মেনে নিতে সম্মত হন। আপনি যদি এই শর্তাবলীর সাথে একমত না হন, তাহলে অনুগ্রহ করে সেবা ব্যবহার করবেন না।
+                    AI Tax & Law Assistant (&quot;সেবা&quot;, &quot;আমরা&quot;, &quot;আমাদের&quot;) ব্যবহার করে, আপনি এই সেবার শর্তাবলী মেনে নিতে সম্মত হন। আপনি যদি এই শর্তাবলীর সাথে একমত না হন, তাহলে অনুগ্রহ করে সেবা ব্যবহার করবেন না।
                   </p>
                 </section>
 
@@ -133,7 +133,7 @@ export default function TermsPage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
                   <p className="text-muted-foreground mb-4">
-                    By accessing and using AI Tax & Law Assistant ("Service", "we", "us", "our"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Service.
+                    By accessing and using AI Tax & Law Assistant (&quot;Service&quot;, &quot;we&quot;, &quot;us&quot;, &quot;our&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Service.
                   </p>
                 </section>
 

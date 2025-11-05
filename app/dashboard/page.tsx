@@ -135,7 +135,7 @@ export default function DashboardPage() {
                 {t('dashboard.title')}
               </h1>
               <p className="text-xl text-muted-foreground">
-                Welcome back! Here's your tax overview.
+                Welcome back! Here&apos;s your tax overview.
               </p>
             </div>
             <Button className="flex items-center space-x-2">

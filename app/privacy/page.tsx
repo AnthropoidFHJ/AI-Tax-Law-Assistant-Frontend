@@ -43,7 +43,7 @@ export default function PrivacyPage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">১. ভূমিকা</h2>
                   <p className="text-muted-foreground mb-4">
-                    AI Tax & Law Assistant ("আমরা", "আমাদের", "আমাদের") আপনার গোপনীয়তা রক্ষা করতে প্রতিশ্রুতিবদ্ধ। এই গোপনীয়তা নীতি ব্যাখ্যা করে কিভাবে আমরা আপনার ব্যক্তিগত তথ্য সংগ্রহ, ব্যবহার, প্রকাশ এবং সুরক্ষিত করি যখন আপনি আমাদের সেবা ব্যবহার করেন।
+                    AI Tax & Law Assistant (&quot;আমরা&quot;, &quot;আমাদের&quot;, &quot;আমাদের&quot;) আপনার গোপনীয়তা রক্ষা করতে প্রতিশ্রুতিবদ্ধ। এই গোপনীয়তা নীতি ব্যাখ্যা করে কিভাবে আমরা আপনার ব্যক্তিগত তথ্য সংগ্রহ, ব্যবহার, প্রকাশ এবং সুরক্ষিত করি যখন আপনি আমাদের সেবা ব্যবহার করেন।
                   </p>
                 </section>
 
@@ -165,7 +165,7 @@ export default function PrivacyPage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">১১. গোপনীয়তা নীতি পরিবর্তন</h2>
                   <p className="text-muted-foreground mb-4">
-                    আমরা সময়ে সময়ে এই গোপনীয়তা নীতি আপডেট করতে পারি। আমরা এই পৃষ্ঠায় নতুন গোপনীয়তা নীতি পোস্ট করে এবং "শেষ আপডেট" তারিখ আপডেট করে কোনো পরিবর্তন সম্পর্কে আপনাকে অবহিত করব।
+                    আমরা সময়ে সময়ে এই গোপনীয়তা নীতি আপডেট করতে পারি। আমরা এই পৃষ্ঠায় নতুন গোপনীয়তা নীতি পোস্ট করে এবং &quot;শেষ আপডেট&quot; তারিখ আপডেট করে কোনো পরিবর্তন সম্পর্কে আপনাকে অবহিত করব।
                   </p>
                 </section>
 
@@ -193,7 +193,7 @@ export default function PrivacyPage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">1. Introduction</h2>
                   <p className="text-muted-foreground mb-4">
-                    AI Tax & Law Assistant ("we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you use our Service.
+                    AI Tax & Law Assistant (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you use our Service.
                   </p>
                 </section>
 
@@ -299,7 +299,7 @@ export default function PrivacyPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-2xl font-bold mb-4">9. Children's Privacy</h2>
+                  <h2 className="text-2xl font-bold mb-4">9. Children&apos;s Privacy</h2>
                   <p className="text-muted-foreground mb-4">
                     Our Service is not intended for individuals under 18 years old. We do not knowingly collect personal information from children. If you are a parent and aware that your child has provided us with personal information, please contact us.
                   </p>
@@ -315,7 +315,7 @@ export default function PrivacyPage() {
                 <section>
                   <h2 className="text-2xl font-bold mb-4">11. Changes to Privacy Policy</h2>
                   <p className="text-muted-foreground mb-4">
-                    We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+                    We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
                   </p>
                 </section>
 

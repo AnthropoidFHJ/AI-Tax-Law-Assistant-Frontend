@@ -81,7 +81,7 @@ export default function ChatPage() {
             </h1>
           </div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ask me anything about tax filing, calculations, or Bangladesh tax laws. I'm here to help!
+            Ask me anything about tax filing, calculations, or Bangladesh tax laws. I&apos;m here to help!
           </p>
         </div>
 
