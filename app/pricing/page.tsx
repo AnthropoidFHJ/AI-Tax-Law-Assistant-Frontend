@@ -95,7 +95,7 @@ export default function PricingPage() {
           <h1 className={`text-4xl md:text-5xl font-bold mb-4 ${
             language === 'bn' ? 'bangla-text' : ''
           }`}>
-            {language === 'bn' ? 'সহজ এবং স্বচ্ছ মূল্য' : 'Simple & Transparent Pricing'}
+            {language === 'bn' ? 'মূল্য' : 'Pricing'}
           </h1>
           <p className={`text-xl text-muted-foreground max-w-2xl mx-auto ${
             language === 'bn' ? 'bangla-text' : ''
@@ -197,98 +197,9 @@ export default function PricingPage() {
           })}
         </div>
 
-        {/* FAQ Section */}
-        <div className="max-w-3xl mx-auto mt-20">
-          <h2 className={`text-3xl font-bold text-center mb-8 ${
-            language === 'bn' ? 'bangla-text' : ''
-          }`}>
-            {language === 'bn' ? 'প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী' : 'Frequently Asked Questions'}
-          </h2>
-          
-          <div className="space-y-4">
-            <Card>
-              <CardHeader>
-                <CardTitle className={`text-lg ${
-                  language === 'bn' ? 'bangla-text' : ''
-                }`}>
-                  {language === 'bn' 
-                    ? 'আমি কি যেকোনো সময় আমার প্ল্যান পরিবর্তন করতে পারি?' 
-                    : 'Can I change my plan at any time?'}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className={language === 'bn' ? 'bangla-text' : ''}>
-                <p className="text-muted-foreground">
-                  {language === 'bn'
-                    ? 'হ্যাঁ, আপনি যেকোনো সময় আপগ্রেড বা ডাউনগ্রেড করতে পারেন। পরিবর্তন আপনার পরবর্তী বিলিং চক্র থেকে কার্যকর হবে।'
-                    : 'Yes, you can upgrade or downgrade at any time. Changes will be effective from your next billing cycle.'}
-                </p>
-              </CardContent>
-            </Card>
+        {/* FAQ removed per request */}
 
-            <Card>
-              <CardHeader>
-                <CardTitle className={`text-lg ${
-                  language === 'bn' ? 'bangla-text' : ''
-                }`}>
-                  {language === 'bn' 
-                    ? 'কোন পেমেন্ট পদ্ধতি গৃহীত হয়?' 
-                    : 'What payment methods are accepted?'}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className={language === 'bn' ? 'bangla-text' : ''}>
-                <p className="text-muted-foreground">
-                  {language === 'bn'
-                    ? 'আমরা সব প্রধান ক্রেডিট কার্ড, ডেবিট কার্ড, মোবাইল ব্যাংকিং (বিকাশ, নগদ, রকেট) এবং ব্যাংক ট্রান্সফার গ্রহণ করি।'
-                    : 'We accept all major credit cards, debit cards, mobile banking (bKash, Nagad, Rocket), and bank transfers.'}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className={`text-lg ${
-                  language === 'bn' ? 'bangla-text' : ''
-                }`}>
-                  {language === 'bn' 
-                    ? 'রিফান্ড নীতি কী?' 
-                    : 'What is the refund policy?'}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className={language === 'bn' ? 'bangla-text' : ''}>
-                <p className="text-muted-foreground">
-                  {language === 'bn'
-                    ? 'আমরা ৩০ দিনের মানি-ব্যাক গ্যারান্টি অফার করি। আপনি যদি সন্তুষ্ট না হন, সম্পূর্ণ রিফান্ডের জন্য আমাদের সাথে যোগাযোগ করুন।'
-                    : 'We offer a 30-day money-back guarantee. If you\'re not satisfied, contact us for a full refund.'}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-20">
-          <Card className="max-w-2xl mx-auto bg-primary/5 border-primary/20">
-            <CardContent className="py-12">
-              <h3 className={`text-2xl font-bold mb-4 ${
-                language === 'bn' ? 'bangla-text' : ''
-              }`}>
-                {language === 'bn' 
-                  ? 'এখনও নিশ্চিত নন?' 
-                  : 'Still not sure?'}
-              </h3>
-              <p className={`text-muted-foreground mb-6 ${
-                language === 'bn' ? 'bangla-text' : ''
-              }`}>
-                {language === 'bn'
-                  ? 'আমাদের টিমের সাথে কথা বলুন এবং আপনার জন্য সেরা পরিকল্পনা খুঁজুন।'
-                  : 'Talk to our team and find the best plan for you.'}
-              </p>
-              <Button size="lg" className={language === 'bn' ? 'bangla-text' : ''}>
-                {language === 'bn' ? 'আমাদের সাথে যোগাযোগ করুন' : 'Contact Us'}
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
+        {/* CTA removed per request */}
       </div>
     </div>
   )

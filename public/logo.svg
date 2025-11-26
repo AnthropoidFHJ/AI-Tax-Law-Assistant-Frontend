@@ -35,5 +35,5 @@
   <circle cx="135" cy="65" r="1" fill="#10B981"/>
   
   <!-- Bottom Text -->
-  <text x="100" y="185" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">TAX ASSISTANT</text>
+  <text x="100" y="175" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">ASSISTANT</text>
 </svg>

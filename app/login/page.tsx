@@ -6,7 +6,7 @@ import { useI18n } from '@/lib/i18n-provider'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Calculator, Mail, Lock, Eye, EyeOff, Receipt } from 'lucide-react'
+import { Mail, Lock, Eye, EyeOff } from 'lucide-react'
 
 export default function LoginPage() {
   const { t, language } = useI18n()
@@ -36,9 +36,7 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="flex justify-center mb-8">
           <Link href="/">
-            <div className="bg-gradient-to-br from-blue-500 via-cyan-500 to-green-500 p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <Receipt className="h-10 w-10 text-white" strokeWidth={2} />
-            </div>
+            <img src="/logo.svg" alt="Logo" className="h-16 w-16 rounded-xl shadow-lg hover:shadow-xl transition-shadow" />
           </Link>
         </div>
 

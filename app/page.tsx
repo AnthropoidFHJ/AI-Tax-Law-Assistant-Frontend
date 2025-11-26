@@ -64,9 +64,7 @@ export default function HomePage() {
           <div className="text-center">
             <div>
               <div className="flex justify-center mb-6">
-                <div className="bg-gradient-to-br from-blue-500 via-cyan-500 to-green-500 p-4 rounded-xl shadow-lg">
-                  <Receipt className="h-8 w-8 text-white" strokeWidth={2} />
-                </div>
+                <img src="/logo.svg" alt="Logo" className="h-16 w-16 rounded-xl shadow-lg" />
               </div>
               
               <h1 className={`text-4xl md:text-6xl font-bold mb-6 ${
@@ -263,15 +261,13 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-background border-t py-12">
+      <footer className="bg-background border-t py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="flex items-center justify-center mb-4">
-              <div className="bg-gradient-to-br from-blue-500 via-cyan-500 to-green-500 p-2 rounded-lg shadow">
-                <Receipt className="h-6 w-6 text-white" strokeWidth={2} />
-              </div>
+            <div className="flex items-center justify-center mb-2">
+              <img src="/logo.svg" alt="Logo" className="h-8 w-8" />
             </div>
-            <p className={`text-muted-foreground ${
+            <p className={`text-sm text-muted-foreground ${
               language === 'bn' ? 'bangla-text' : ''
             }`}>
               © 2025 {t('landing.footer')}

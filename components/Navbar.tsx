@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
 import { useI18n } from '@/lib/i18n-provider'
 import { Button } from '@/components/ui/button'
 import { 
@@ -13,7 +14,8 @@ import {
   Home,
   Briefcase,
   BarChart3,
-  MessageSquare
+  Bell,
+  LogOut
 } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
@@ -22,6 +24,17 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [mounted, setMounted] = React.useState(false)
+  const pathname = usePathname()
+  const router = useRouter()
+
+  // Check if user is on authenticated pages (dashboard, workspace, profile, etc.)
+  const isAuthenticatedPage = pathname?.startsWith('/dashboard') || 
+    pathname?.startsWith('/workspace') || 
+    pathname?.startsWith('/profile') ||
+    pathname?.startsWith('/chat') ||
+    pathname?.startsWith('/upload') ||
+    pathname?.startsWith('/forms') ||
+    pathname?.startsWith('/calculator')
 
   React.useEffect(() => {
     setMounted(true)
@@ -48,7 +61,7 @@ export function Navbar() {
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center space-x-2">
-                {/* Logo removed */}
+                <img src="/logo.svg" alt="Logo" className="h-10 w-10" />
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -96,18 +109,42 @@ export function Navbar() {
                 <span className="inline-block h-5 w-5" />
               )}
             </Button>
-            
-            <Link href="/login">
-              <Button variant="outline">
-                {t('nav.login')}
-              </Button>
-            </Link>
-            
-            <Link href="/signup">
-              <Button>
-                {t('nav.signup')}
-              </Button>
-            </Link>
+
+            {isAuthenticatedPage ? (
+              <>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => router.push('/notifications')}
+                  title="Notification Settings"
+                >
+                  <Bell className="h-5 w-5" />
+                </Button>
+                
+                <Button
+                  variant="outline"
+                  onClick={() => router.push('/login')}
+                  className="flex items-center space-x-2"
+                >
+                  <LogOut className="h-4 w-4" />
+                  <span>Sign Out</span>
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link href="/login">
+                  <Button variant="outline">
+                    {t('nav.login')}
+                  </Button>
+                </Link>
+                
+                <Link href="/signup">
+                  <Button>
+                    {t('nav.signup')}
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
 
           <div className="sm:hidden flex items-center">
@@ -174,16 +211,45 @@ export function Navbar() {
               </Button>
             </div>
             <div className="mt-3 px-2 space-y-1">
-              <Link href="/login" className="block w-full">
-                <Button variant="outline" className="w-full justify-start">
-                  {t('nav.login')}
-                </Button>
-              </Link>
-              <Link href="/signup" className="block w-full">
-                <Button className="w-full justify-start">
-                  {t('nav.signup')}
-                </Button>
-              </Link>
+              {isAuthenticatedPage ? (
+                <>
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start"
+                    onClick={() => {
+                      router.push('/notifications')
+                      setIsMobileMenuOpen(false)
+                    }}
+                  >
+                    <Bell className="h-4 w-4 mr-2" />
+                    Notification Settings
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start"
+                    onClick={() => {
+                      router.push('/login')
+                      setIsMobileMenuOpen(false)
+                    }}
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Sign Out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Link href="/login" className="block w-full">
+                    <Button variant="outline" className="w-full justify-start">
+                      {t('nav.login')}
+                    </Button>
+                  </Link>
+                  <Link href="/signup" className="block w-full">
+                    <Button className="w-full justify-start">
+                      {t('nav.signup')}
+                    </Button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>

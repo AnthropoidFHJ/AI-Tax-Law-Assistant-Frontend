@@ -6,7 +6,7 @@ import { useI18n } from '@/lib/i18n-provider'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Mail, ArrowLeft, CheckCircle, Receipt } from 'lucide-react'
+import { Mail, ArrowLeft, CheckCircle } from 'lucide-react'
 
 export default function ForgotPasswordPage() {
   const { t, language } = useI18n()
@@ -25,9 +25,7 @@ export default function ForgotPasswordPage() {
         {/* Logo */}
         <div className="flex justify-center mb-8">
           <Link href="/">
-            <div className="bg-gradient-to-br from-blue-500 via-cyan-500 to-green-500 p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <Receipt className="h-10 w-10 text-white" strokeWidth={2} />
-            </div>
+            <img src="/logo.svg" alt="Logo" className="h-16 w-16 rounded-xl shadow-lg hover:shadow-xl transition-shadow" />
           </Link>
         </div>
 
@@ -125,8 +123,8 @@ export default function ForgotPasswordPage() {
             {language === 'bn' 
               ? 'সমস্যা হচ্ছে? আমাদের সাথে যোগাযোগ করুন ' 
               : 'Having trouble? Contact us at '}
-            <Link href="mailto:support@example.com" className="text-primary hover:underline">
-              support@taxassistant.com
+            <Link href="mailto:ferdoushasanjibon25@gmail.com" className="text-primary hover:underline">
+              ferdoushasanjibon25@gmail.com
             </Link>
           </p>
         </div>

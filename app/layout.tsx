@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   keywords: ['tax', 'legal', 'AI', 'Bangladesh', 'filing', 'কর', 'আইন'],
   authors: [{ name: 'AI Tax Assistant Team' }],
   icons: {
-    icon: '/favicon.ico',
+    icon: '/logo.svg',
+    apple: '/logo.svg',
   },
 }
 

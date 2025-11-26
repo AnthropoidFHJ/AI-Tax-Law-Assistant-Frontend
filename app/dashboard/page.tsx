@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useRouter } from 'next/navigation'
 import { useI18n } from '@/lib/i18n-provider'
 import { Navbar } from '@/components/Navbar'
 import { DashboardCard, StatsCard } from '@/components/DashboardCard'
@@ -10,18 +11,22 @@ import {
   BarChart3,
   TrendingUp,
   FileText,
-  AlertCircle,
   Calendar,
   DollarSign,
   PieChart,
   Download,
-  Eye,
+  User,
+  Phone,
+  Mail,
+  MapPin,
+  CreditCard,
   Edit,
   
 } from 'lucide-react'
 
 export default function DashboardPage() {
   const { t } = useI18n()
+  const router = useRouter()
 
   const stats = [
     {
@@ -37,70 +42,19 @@ export default function DashboardPage() {
       icon: PieChart,
       trend: { value: 5, isPositive: false },
       color: 'red' as const
-    },
-    {
-      title: t('dashboard.refund'),
-      value: '৳ 12,500',
-      icon: TrendingUp,
-      trend: { value: 8, isPositive: true },
-      color: 'blue' as const
-    },
-    {
-      title: 'Tax Returns Filed',
-      value: '3',
-      icon: FileText,
-      trend: { value: 0, isPositive: true },
-      color: 'purple' as const
     }
   ]
 
-  const taxReturns = [
-    {
-      year: '2023-24',
-      status: 'Submitted',
-      submittedDate: '2024-06-15',
-      amount: '৳ 45,000',
-      statusColor: 'text-green-600 bg-green-50 dark:bg-green-900/20'
-    },
-    {
-      year: '2022-23',
-      status: 'Approved',
-      submittedDate: '2023-07-20',
-      amount: '৳ 38,000',
-      statusColor: 'text-blue-600 bg-blue-50 dark:bg-blue-900/20'
-    },
-    {
-      year: '2021-22',
-      status: 'Completed',
-      submittedDate: '2022-08-10',
-      amount: '৳ 32,000',
-      statusColor: 'text-gray-600 bg-gray-50 dark:bg-gray-900/20'
-    }
-  ]
-
-  const pendingActions = [
-    {
-      title: 'Update Bank Statement',
-      description: 'Upload latest 3 months bank statement for 2024',
-      priority: 'High',
-      dueDate: '2024-07-15',
-      priorityColor: 'text-red-600 bg-red-50 dark:bg-red-900/20'
-    },
-    {
-      title: 'Investment Declaration',
-      description: 'Declare your FDR and DPS investments',
-      priority: 'Medium',
-      dueDate: '2024-07-30',
-      priorityColor: 'text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20'
-    },
-    {
-      title: 'Address Verification',
-      description: 'Verify your current address information',
-      priority: 'Low',
-      dueDate: '2024-08-15',
-      priorityColor: 'text-green-600 bg-green-50 dark:bg-green-900/20'
-    }
-  ]
+  const userData = {
+    name: 'Md. Rahman Ahmed',
+    mobile: '+880 1712-345678',
+    email: 'rahman.ahmed@email.com',
+    address: 'House 42, Road 5, Dhanmondi, Dhaka-1205',
+    tin: '123456789012',
+    nid: '1990123456789',
+    dateOfBirth: '1990-05-15',
+    occupation: 'Software Engineer'
+  }
 
   const taxAdvice = [
     {
@@ -146,7 +100,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {stats.map((stat, index) => (
             <StatsCard
               key={index}
@@ -162,88 +116,106 @@ export default function DashboardPage() {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 flex flex-col h-full">
-            {/* Tax Returns */}
-            <Card className="flex-1 mb-6">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <FileText className="h-5 w-5" />
-                  <span>{t('dashboard.returns')}</span>
-                </CardTitle>
-                <CardDescription>
-                  Your tax return filing history
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {taxReturns.map((taxReturn, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 border rounded-lg">
-                      <div className="flex items-center space-x-4">
-                        <div className="p-2 bg-primary/10 rounded-lg">
-                          <FileText className="h-4 w-4 text-primary" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium">Tax Year {taxReturn.year}</h4>
-                          <p className="text-sm text-muted-foreground">
-                            Submitted on {new Date(taxReturn.submittedDate).toLocaleDateString('en-GB', { timeZone: 'UTC' })}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-4">
-                        <span className="font-medium">{taxReturn.amount}</span>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${taxReturn.statusColor}`}>
-                          {taxReturn.status}
-                        </span>
-                        <div className="flex space-x-1">
-                          <Button variant="ghost" size="icon" className="h-8 w-8">
-                            <Eye className="h-4 w-4" />
-                          </Button>
-                          <Button variant="ghost" size="icon" className="h-8 w-8">
-                            <Download className="h-4 w-4" />
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Pending Actions */}
+            {/* My Data */}
             <Card className="flex-1">
               <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <AlertCircle className="h-5 w-5" />
-                  <span>{t('dashboard.pending')}</span>
-                </CardTitle>
-                <CardDescription>
-                  Actions that require your attention
-                </CardDescription>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle className="flex items-center space-x-2">
+                      <User className="h-5 w-5" />
+                      <span>My Data</span>
+                    </CardTitle>
+                    <CardDescription>
+                      Your personal information
+                    </CardDescription>
+                  </div>
+                  <Button variant="outline" size="sm" onClick={() => router.push('/profile')}>
+                    <Edit className="h-4 w-4 mr-2" />
+                    Edit
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  {pendingActions.map((action, index) => (
-                    <div key={index} className="flex items-start justify-between p-4 border rounded-lg">
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <h4 className="font-medium">{action.title}</h4>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${action.priorityColor}`}>
-                            {action.priority}
-                          </span>
-                        </div>
-                        <p className="text-sm text-muted-foreground mb-2">
-                          {action.description}
-                        </p>
-                        <div className="flex items-center text-xs text-muted-foreground">
-                          <Calendar className="h-3 w-3 mr-1" />
-                          Due: {new Date(action.dueDate).toLocaleDateString('en-GB', { timeZone: 'UTC' })}
-                        </div>
-                      </div>
-                      <Button variant="outline" size="sm">
-                        <Edit className="h-4 w-4 mr-2" />
-                        Action
-                      </Button>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="flex items-start space-x-3">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <User className="h-4 w-4 text-primary" />
                     </div>
-                  ))}
+                    <div>
+                      <p className="text-sm text-muted-foreground">Full Name</p>
+                      <p className="font-medium">{userData.name}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <Phone className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Mobile Number</p>
+                      <p className="font-medium">{userData.mobile}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <Mail className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Email Address</p>
+                      <p className="font-medium">{userData.email}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <MapPin className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Address</p>
+                      <p className="font-medium">{userData.address}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <CreditCard className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">TIN Number</p>
+                      <p className="font-medium">{userData.tin}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <CreditCard className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">NID Number</p>
+                      <p className="font-medium">{userData.nid}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <Calendar className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Date of Birth</p>
+                      <p className="font-medium">{new Date(userData.dateOfBirth).toLocaleDateString('en-GB', { timeZone: 'UTC' })}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <FileText className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Occupation</p>
+                      <p className="font-medium">{userData.occupation}</p>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -295,17 +267,27 @@ export default function DashboardPage() {
                 <CardTitle>Quick Actions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button className="w-full justify-start" variant="outline">
+                <Button 
+                  className="w-full justify-start" 
+                  variant="outline"
+                  onClick={() => router.push('/workspace')}
+                >
                   <FileText className="h-4 w-4 mr-2" />
                   File New Return
                 </Button>
-                <Button className="w-full justify-start" variant="outline">
+                <Button 
+                  className="w-full justify-start" 
+                  variant="outline"
+                  onClick={() => {
+                    // Download the most recent tax file
+                    const link = document.createElement('a')
+                    link.href = '/tax-files/recent-tax-return.pdf'
+                    link.download = 'recent-tax-return.pdf'
+                    link.click()
+                  }}
+                >
                   <Download className="h-4 w-4 mr-2" />
                   Download Forms
-                </Button>
-                <Button className="w-full justify-start" variant="outline">
-                  <BarChart3 className="h-4 w-4 mr-2" />
-                  Tax Calculator
                 </Button>
               </CardContent>
             </Card>

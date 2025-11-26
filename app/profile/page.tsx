@@ -16,7 +16,6 @@ import {
   Save,
   Edit2,
   Lock,
-  Bell,
   Globe,
   Shield
 } from 'lucide-react'
@@ -35,13 +34,6 @@ export default function ProfilePage() {
     occupation: 'Software Engineer'
   })
   
-  const [preferences, setPreferences] = React.useState({
-    emailNotifications: true,
-    smsNotifications: false,
-    taxReminders: true,
-    newsletterSubscription: true
-  })
-
   const handleSaveProfile = () => {
     // Save profile logic here
     setIsEditing(false)
@@ -250,115 +242,6 @@ export default function ProfilePage() {
               </CardContent>
             </Card>
 
-            {/* Notification Preferences */}
-            <Card>
-              <CardHeader>
-                <CardTitle className={`flex items-center space-x-2 ${
-                  language === 'bn' ? 'bangla-text' : ''
-                }`}>
-                  <Bell className="h-5 w-5" />
-                  <span>{language === 'bn' ? 'বিজ্ঞপ্তি পছন্দ' : 'Notification Preferences'}</span>
-                </CardTitle>
-                <CardDescription className={language === 'bn' ? 'bangla-text' : ''}>
-                  {language === 'bn' 
-                    ? 'আপনি কীভাবে বিজ্ঞপ্তি পেতে চান তা চয়ন করুন' 
-                    : 'Choose how you want to receive notifications'}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="space-y-0.5">
-                    <label className={`text-sm font-medium ${
-                      language === 'bn' ? 'bangla-text' : ''
-                    }`}>
-                      {language === 'bn' ? 'ইমেইল বিজ্ঞপ্তি' : 'Email Notifications'}
-                    </label>
-                    <p className={`text-xs text-muted-foreground ${
-                      language === 'bn' ? 'bangla-text' : ''
-                    }`}>
-                      {language === 'bn' 
-                        ? 'ইমেইলের মাধ্যমে আপডেট পান' 
-                        : 'Receive updates via email'}
-                    </p>
-                  </div>
-                  <input
-                    type="checkbox"
-                    checked={preferences.emailNotifications}
-                    onChange={(e) => setPreferences({...preferences, emailNotifications: e.target.checked})}
-                    className="h-4 w-4"
-                  />
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <div className="space-y-0.5">
-                    <label className={`text-sm font-medium ${
-                      language === 'bn' ? 'bangla-text' : ''
-                    }`}>
-                      {language === 'bn' ? 'এসএমএস বিজ্ঞপ্তি' : 'SMS Notifications'}
-                    </label>
-                    <p className={`text-xs text-muted-foreground ${
-                      language === 'bn' ? 'bangla-text' : ''
-                    }`}>
-                      {language === 'bn' 
-                        ? 'এসএমএসের মাধ্যমে আপডেট পান' 
-                        : 'Receive updates via SMS'}
-                    </p>
-                  </div>
-                  <input
-                    type="checkbox"
-                    checked={preferences.smsNotifications}
-                    onChange={(e) => setPreferences({...preferences, smsNotifications: e.target.checked})}
-                    className="h-4 w-4"
-                  />
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <div className="space-y-0.5">
-                    <label className={`text-sm font-medium ${
-                      language === 'bn' ? 'bangla-text' : ''
-                    }`}>
-                      {language === 'bn' ? 'কর অনুস্মারক' : 'Tax Reminders'}
-                    </label>
-                    <p className={`text-xs text-muted-foreground ${
-                      language === 'bn' ? 'bangla-text' : ''
-                    }`}>
-                      {language === 'bn' 
-                        ? 'সময়সীমা এবং গুরুত্বপূর্ণ তারিখ' 
-                        : 'Deadlines and important dates'}
-                    </p>
-                  </div>
-                  <input
-                    type="checkbox"
-                    checked={preferences.taxReminders}
-                    onChange={(e) => setPreferences({...preferences, taxReminders: e.target.checked})}
-                    className="h-4 w-4"
-                  />
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <div className="space-y-0.5">
-                    <label className={`text-sm font-medium ${
-                      language === 'bn' ? 'bangla-text' : ''
-                    }`}>
-                      {language === 'bn' ? 'নিউজলেটার' : 'Newsletter'}
-                    </label>
-                    <p className={`text-xs text-muted-foreground ${
-                      language === 'bn' ? 'bangla-text' : ''
-                    }`}>
-                      {language === 'bn' 
-                        ? 'কর টিপস এবং আপডেট পান' 
-                        : 'Get tax tips and updates'}
-                    </p>
-                  </div>
-                  <input
-                    type="checkbox"
-                    checked={preferences.newsletterSubscription}
-                    onChange={(e) => setPreferences({...preferences, newsletterSubscription: e.target.checked})}
-                    className="h-4 w-4"
-                  />
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Sidebar */}
